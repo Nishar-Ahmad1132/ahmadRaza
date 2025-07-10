@@ -3,7 +3,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Award, Users, TrendingUp, Heart, Target, Zap } from 'lucide-react';
-import ahmadImage from "../assets/ahmadraza.jpg"; // Adjust the path as necessary
+import ahmadImage from "../assets/ahmadRaza.jpg"; // Adjust the path as necessary
+import img7 from "../assets/img7.jpg"; // Ensure this image is available in your assets
 
 const About = () => {
   const achievements = [
@@ -119,7 +120,7 @@ const About = () => {
                   <img
                     alt="Ahmad's professional journey"
                     className="w-full h-96 object-cover"
-                    src={ahmadImage}
+                    src={img7}
                   />
                 </div>
               </motion.div>

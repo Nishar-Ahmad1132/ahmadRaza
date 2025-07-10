@@ -12,18 +12,24 @@ import Contact from '@/pages/Contact';
 import Blog from '@/pages/Blog';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import ImageSlider from '@/components/ImageSlider'; // Ensure this path is correct
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen">
         <Helmet>
-          <title>Ahmad - Network Marketing Supervisor | Forever Living Products</title>
-          <meta name="description" content="Join Ahmad's Forever Living team and discover the power of natural wellness products. Expert guidance in network marketing and business development." />
+          <title>
+            Ahmad - Network Marketing Supervisor | Forever Living Products
+          </title>
+          <meta
+            name="description"
+            content="Join Ahmad's Forever Living team and discover the power of natural wellness products. Expert guidance in network marketing and business development."
+          />
         </Helmet>
-        
+
         <Navbar />
-        
+        <ImageSlider /> {/* Add the ImageSlider component here */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
