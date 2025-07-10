@@ -88,7 +88,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <section className="relative z-40 mt-16 w-full h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] overflow-hidden bg-gray-900">
+    <section className="relative z-40 mt-16 w-full h-[calc(100vh)] md:h-[calc(100vh-80px)]  bg-gray-900">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={index}

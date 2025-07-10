@@ -52,9 +52,9 @@ const Navbar = () => {
             {navItems.map(item => <Link key={item.name} to={item.path} className={`text-sm font-medium transition-colors hover:text-green-600 ${location.pathname === item.path ? 'text-green-600 border-b-2 border-green-600' : scrolled ? 'text-gray-700' : 'text-white'}`}>
                 {item.name}
               </Link>)}
-            <Button className="forever-gradient text-white hover:opacity-90">
+            {/* <Button className="forever-gradient text-white hover:opacity-90">
               Get Started
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}

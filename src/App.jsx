@@ -17,7 +17,7 @@ import ImageSlider from '@/components/ImageSlider'; // Ensure this path is corre
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
+      <div className="min-h-screen overflow-x-hidden">
         <Helmet>
           <title>
             Ahmad - Network Marketing Supervisor | Forever Living Products
@@ -27,9 +27,8 @@ function App() {
             content="Join Ahmad's Forever Living team and discover the power of natural wellness products. Expert guidance in network marketing and business development."
           />
         </Helmet>
-
         <Navbar />
-        <ImageSlider /> {/* Add the ImageSlider component here */}
+        <ImageSlider /> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -38,7 +37,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
-        
         <Footer />
         <WhatsAppFloat />
         <Toaster />

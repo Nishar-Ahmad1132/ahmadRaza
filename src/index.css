@@ -16,6 +16,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* overflow-x: none; */
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -23,6 +25,7 @@ body {
   line-height: 1.6;
   color: #333;
   background: #ffffff;
+
 }
 
 .forever-gradient {
