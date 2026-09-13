@@ -2,238 +2,33 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Users, Award, TrendingUp } from 'lucide-react';
+import { ArrowRight, Star, Users, Award, TrendingUp, GraduationCap, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import TestimonialsSlider from '@/components/TestimonialsSlider.jsx';
+import ahmadImage from '@/assets/ahmadraza.jpg';
+
 const Home = () => {
-  const {
-    toast
-  } = useToast();
-  const handleContactClick = () => {
-    toast({
-      title: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
-    });
-  };
-  const stats = [{
-    icon: Users,
-    number: '500+',
-    label: 'Team Members'
-  }, {
-    icon: Award,
-    number: '15+',
-    label: 'Awards Won'
-  }, {
-    icon: TrendingUp,
-    number: '95%',
-    label: 'Success Rate'
-  }, {
-    icon: Star,
-    number: '4.9',
-    label: 'Rating'
-  }];
-  return <>
-      <Helmet>
-        <title>Ahmad - Network Marketing Supervisor | Forever Living Products</title>
-        <meta name="description" content="Join Ahmad's Forever Living team and discover the power of natural wellness products. Expert guidance in network marketing and business development." />
-      </Helmet>
-
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center hero-pattern overflow-hidden">
-        <div className="absolute inset-0 forever-gradient opacity-90"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{
-          opacity: 0,
-          y: 50
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} className="space-y-8">
-            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl">
-              <img alt="Ahmad - Network Marketing Supervisor" className="w-full h-full object-cover" src="https://storage.googleapis.com/hostinger-horizons-assets-prod/7ca2e517-8274-4178-8f0a-918dfce1b688/1ecb10d73d220c8407606827ef1638f1.jpg" />
-            </div>
-
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">Ahmad Raza</h1>
-              <p className="text-xl md:text-2xl text-yellow-300 font-medium">
-                Network Marketing Supervisor – Forever Living Products
-              </p>
-            </div>
-
-            <motion.div initial={{
-            opacity: 0
-          }} animate={{
-            opacity: 1
-          }} transition={{
-            delay: 0.5,
-            duration: 0.8
-          }} className="max-w-3xl mx-auto">
-              <blockquote className="text-lg md:text-xl text-white/90 italic leading-relaxed">
-                "Success in network marketing isn't just about selling products—it's about building relationships, 
-                empowering others, and creating a legacy of wellness and prosperity."
-              </blockquote>
-            </motion.div>
-
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            delay: 0.8,
-            duration: 0.6
-          }} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button onClick={handleContactClick} size="lg" className="bg-yellow-400 text-green-800 hover:bg-yellow-300 font-semibold px-8 py-3 text-lg">
-                Contact Me <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Link to="/join-team">
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-green-800 px-8 py-3 text-lg">
-                  Join My Team
-                </Button>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-yellow-400/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{
-          opacity: 0,
-          y: 50
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }} className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => <motion.div key={index} initial={{
-            opacity: 0,
-            scale: 0.5
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} transition={{
-            delay: index * 0.1,
-            duration: 0.6
-          }} viewport={{
-            once: true
-          }} className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 forever-gradient rounded-full flex items-center justify-center">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-3xl font-bold forever-text-gradient mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </motion.div>)}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* About Preview */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{
-            opacity: 0,
-            x: -50
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }} viewport={{
-            once: true
-          }}>
-              <h2 className="text-4xl font-bold forever-text-gradient mb-6">
-                Passionate About Wellness & Growth
-              </h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                With years of experience in network marketing and a deep passion for health and wellness, 
-                I've dedicated my career to helping others achieve their dreams through Forever Living Products.
-              </p>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                My journey has been filled with incredible milestones, team achievements, and most importantly, 
-                the satisfaction of seeing others succeed and transform their lives.
-              </p>
-              <Link to="/about">
-                <Button className="forever-gradient text-white hover:opacity-90">
-                  Learn More About Me <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </motion.div>
-
-            <motion.div initial={{
-            opacity: 0,
-            x: 50
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.8
-          }} viewport={{
-            once: true
-          }} className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img alt="Ahmad working with team members" className="w-full h-96 object-cover" src="https://images.unsplash.com/photo-1651009188116-bb5f80eaf6aa" />
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 forever-gradient rounded-full flex items-center justify-center shadow-xl">
-                <Award className="w-12 h-12 text-white" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <TestimonialsSlider />
-
-      {/* CTA Section */}
-      <section className="py-20 forever-gradient">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{
-          opacity: 0,
-          y: 50
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }} className="space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Ready to Transform Your Life?
-            </h2>
-            <p className="text-xl text-white/90 leading-relaxed">
-              Join thousands of successful entrepreneurs who have built thriving businesses 
-              with Forever Living Products. Your journey to financial freedom starts here.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/join-team">
-                <Button size="lg" className="bg-yellow-400 text-green-800 hover:bg-yellow-300 font-semibold px-8 py-3">
-                  Join My Team Today
-                </Button>
-              </Link>
-              <Link to="/products">
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-green-800 px-8 py-3">
-                  Explore Products
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </>;
+  const { toast } = useToast();
+  const stats = [{ icon: Users, number: '500+', label: 'Team Members' }, { icon: Award, number: '15+', label: 'Awards Won' }, { icon: TrendingUp, number: '95%', label: 'Success Rate' }, { icon: Star, number: '4.9', label: 'Rating' }];
+  const handleContactClick = () => toast({ title: "This feature isn't implemented yet." });
+  return <main className="home-page">
+    <Helmet><title>Ahmad Raza | Computer Science Engineer</title><meta name="description" content="Portfolio of Ahmad Raza, a computer science engineer with experience in algorithms, optimization, and mathematical problem-solving." /></Helmet>
+    <section className="home-hero relative min-h-screen flex items-center overflow-hidden">
+      <div className="absolute inset-0 bg-green-950/20"></div>
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-24 pb-16"><div className="grid lg:grid-cols-2 gap-12 items-center">
+        <motion.div initial={{ opacity: 0, x: -35 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="text-center lg:text-left">
+          <p className="text-sm font-bold tracking-[0.2em] text-yellow-300 uppercase mb-4">Computer Science Engineer</p><h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">Ahmad Raza</h1>
+          <p className="mt-6 text-xl md:text-2xl text-yellow-200 font-medium">M.Tech in Computer Science & Engineering, IIT Kharagpur</p><p className="mt-5 max-w-xl text-lg text-white/90 leading-relaxed">With a B.Tech from MNNIT Allahabad and research experience in combinatorial optimization, I enjoy applying algorithms and mathematical thinking to challenging technical problems.</p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"><Link to="/about"><Button size="lg" className="bg-yellow-400 text-green-900 hover:bg-yellow-300 font-semibold px-7 py-3">My Background <ArrowRight className="ml-2 w-5 h-5" /></Button></Link><Button onClick={handleContactClick} variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-green-800 px-7 py-3">Contact Me</Button></div>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, x: 35 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15, duration: 0.8 }} className="relative mx-auto"><div className="absolute -inset-4 rounded-3xl bg-yellow-400/20 rotate-3"></div><img alt="Ahmad Raza" className="relative w-72 h-80 md:w-96 md:h-[30rem] object-cover rounded-3xl border-4 border-white/80 shadow-2xl" src={ahmadImage} /></motion.div>
+      </div></div>
+    </section>
+    <section className="home-surface py-20"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-4 gap-8">{stats.map((stat, index) => <motion.div key={stat.label} initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: index * 0.1, duration: 0.6 }} viewport={{ once: true }} className="text-center"><div className="w-16 h-16 mx-auto mb-4 forever-gradient rounded-full flex items-center justify-center"><stat.icon className="w-8 h-8 text-white" /></div><div className="text-3xl font-bold forever-text-gradient mb-2">{stat.number}</div><div className="text-gray-600 font-medium">{stat.label}</div></motion.div>)}</motion.div></div></section>
+    <section className="home-soft-surface py-20"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="grid lg:grid-cols-2 gap-12 items-center"><motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}><p className="text-sm font-bold tracking-[0.2em] uppercase text-green-700 mb-3">Introduction</p><h2 className="text-4xl font-bold forever-text-gradient mb-6">Building solutions through code and curiosity</h2><p className="text-lg text-gray-700 mb-7 leading-relaxed">I’m Ahmad Raza, a computer science engineer interested in algorithms, optimization, and mathematical problem-solving.</p><div className="space-y-5 mb-8"><div className="flex gap-4"><div className="w-11 h-11 shrink-0 forever-gradient rounded-xl flex items-center justify-center"><GraduationCap className="w-5 h-5 text-white" /></div><div><h3 className="font-bold text-gray-900">Education</h3><p className="text-gray-700 leading-relaxed">M.Tech in Computer Science & Engineering, IIT Kharagpur (2022–2024), following a B.Tech in Computer Science & Engineering from MNNIT Allahabad (2018–2022).</p></div></div><div className="flex gap-4"><div className="w-11 h-11 shrink-0 forever-gradient rounded-xl flex items-center justify-center"><Briefcase className="w-5 h-5 text-white" /></div><div><h3 className="font-bold text-gray-900">Research & Academic Experience</h3><p className="text-gray-700 leading-relaxed">Research Intern at IIT Kharagpur’s Optimization & Algorithms Lab, where I investigated combinatorial optimization and developed a greedy metaheuristic. I also created mathematics learning content and interactive LaTeX-based assessments for an EdTech internship.</p></div></div><div className="flex gap-4"><div className="w-11 h-11 shrink-0 forever-gradient rounded-xl flex items-center justify-center"><Users className="w-5 h-5 text-white" /></div><div><h3 className="font-bold text-gray-900">Earlier Network Marketing Experience</h3><p className="text-gray-700 leading-relaxed">I previously worked in network marketing with Forever Living Products, developing communication, relationship-building, and team-support skills that continue to shape my professional approach.</p></div></div></div><Link to="/about"><Button className="forever-gradient text-white hover:opacity-90">Explore My Background <ArrowRight className="ml-2 w-4 h-4" /></Button></Link></motion.div><motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="relative"><div className="rounded-2xl overflow-hidden shadow-2xl"><img alt="Ahmad Raza" className="w-full h-[32rem] object-cover" src={ahmadImage} /></div><div className="absolute -bottom-6 -right-6 w-24 h-24 forever-gradient rounded-full flex items-center justify-center shadow-xl"><Award className="w-12 h-12 text-white" /></div></motion.div></div></div></section>
+    <TestimonialsSlider />
+    <section className="py-20 forever-gradient"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"><motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="space-y-8"><h2 className="text-4xl md:text-5xl font-bold text-white">Ready to Transform Your Life?</h2><p className="text-xl text-white/90 leading-relaxed">Join thousands of successful entrepreneurs who have built thriving businesses with Forever Living Products. Your journey to financial freedom starts here.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link to="/join-team"><Button size="lg" className="bg-yellow-400 text-green-800 hover:bg-yellow-300 font-semibold px-8 py-3">Join My Team Today</Button></Link><Link to="/products"><Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-green-800 px-8 py-3">Explore Products</Button></Link></div></motion.div></div></section>
+  </main>;
 };
 export default Home;

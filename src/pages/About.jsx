@@ -2,7 +2,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Award, Users, TrendingUp, Heart, Target, Zap } from 'lucide-react';
+import { Award, Users, TrendingUp, Heart, Target, Zap, GraduationCap, Briefcase, MapPin, CalendarDays } from 'lucide-react';
 import ahmadImage from "../assets/ahmadraza.jpg"; // Adjust the path as necessary
 // import img7 from "../assets/img7.jpg"; // Ensure this image is available in your assets
 
@@ -43,13 +43,52 @@ const About = () => {
     }
   ];
 
+  const education = [
+    {
+      degree: 'M.Tech in Computer Science and Engineering',
+      institution: 'Indian Institute of Technology (IIT) Kharagpur',
+      location: 'Kharagpur, India',
+      period: 'Jul 2022 – May 2024'
+    },
+    {
+      degree: 'B.Tech in Computer Science and Engineering',
+      institution: 'Motilal Nehru National Institute of Technology (MNNIT) Allahabad',
+      location: 'Prayagraj, India',
+      period: 'Jul 2018 – May 2022'
+    }
+  ];
+
+  const experience = [
+    {
+      role: 'Research Intern — Optimization & Algorithms Lab',
+      organization: 'Indian Institute of Technology (IIT) Kharagpur',
+      location: 'IIT Kharagpur',
+      period: 'Aug 2023 – Apr 2024',
+      advisor: 'Advisor: Dr. Neeraj Tyagi',
+      highlights: [
+        'Investigated combinatorial optimization techniques and developed a new greedy metaheuristic.',
+        'Submitted a paper to the 2024 International Conference on Algorithms and Discrete Mathematics.'
+      ]
+    },
+    {
+      role: 'Mathematics Content Intern — Outlier-style EdTech',
+      organization: 'Independent work',
+      location: 'Remote',
+      period: 'Jun 2023 – Jul 2023',
+      highlights: [
+        'Created learning content for Calculus I/II, Linear Algebra, and Probability.',
+        'Built interactive LaTeX-based assessments and proof-based student-learning material.'
+      ]
+    }
+  ];
+
   return (
     <>
       <Helmet>
-        <title>About Ahmad - Network Marketing Leader | Forever Living</title>
+        <title>About Ahmad Raza | Computer Science Engineer</title>
         <meta
           name="description"
-          content="Learn about Ahmad's journey in network marketing, achievements, and passion for helping others succeed with Forever Living Products."
+          content="Learn about Ahmad Raza's education, research experience, and technical background in computer science and engineering."
         />
       </Helmet>
 
@@ -67,8 +106,8 @@ const About = () => {
                 About Ahmad
               </h1>
               <p className="text-xl md:text-2xl text-yellow-300 max-w-3xl mx-auto">
-                Passionate leader dedicated to transforming lives through
-                wellness and entrepreneurship
+                Computer science engineer with a foundation in algorithms,
+                optimization, and mathematical problem-solving
               </p>
             </motion.div>
           </div>
@@ -89,22 +128,20 @@ const About = () => {
                 </h2>
                 <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                   <p>
-                    My journey in network marketing began with a simple belief:
-                    everyone deserves access to natural, high-quality wellness
-                    products and the opportunity to build a better future for
-                    themselves.
+                  I am a computer science engineer with an M.Tech from IIT
+                  Kharagpur and a B.Tech from MNNIT Allahabad. My interests
+                  sit at the intersection of algorithms, optimization, and
+                  rigorous mathematical problem-solving.
                   </p>
                   <p>
-                    Starting as a passionate advocate for Forever Living
-                    Products, I quickly discovered that success in this industry
-                    comes from genuine care for others and a commitment to their
-                    growth. This philosophy has guided every step of my career.
+                  Through research and academic projects, I have explored
+                  combinatorial optimization, greedy metaheuristics, and the
+                  practical communication of complex mathematical concepts.
                   </p>
                   <p>
-                    Today, as a Network Marketing Supervisor, I'm proud to lead
-                    a team of over 500 dedicated entrepreneurs who share the
-                    same vision of wellness, prosperity, and personal
-                    development.
+                  I enjoy building reliable technical solutions, learning from
+                  challenging problems, and contributing thoughtfully to work
+                  that combines theory with real-world impact.
                   </p>
                 </div>
               </motion.div>
@@ -124,6 +161,95 @@ const About = () => {
                   />
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-14"
+            >
+              <div className="w-14 h-14 mx-auto mb-5 forever-gradient rounded-2xl flex items-center justify-center">
+                <GraduationCap className="w-7 h-7 text-white" />
+              </div>
+              <h2 className="text-4xl font-bold forever-text-gradient mb-4">Education</h2>
+              <div className="section-divider"></div>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-7 max-w-5xl mx-auto">
+              {education.map((item, index) => (
+                <motion.article
+                  key={item.degree}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.12, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-7 shadow-lg border border-gray-100"
+                >
+                  <h3 className="text-xl font-bold text-gray-900 leading-snug">{item.degree}</h3>
+                  <p className="text-green-700 font-semibold mt-3">{item.institution}</p>
+                  <div className="mt-5 space-y-2 text-sm text-gray-600">
+                    <p className="flex items-center gap-2"><MapPin className="w-4 h-4 text-green-700" />{item.location}</p>
+                    <p className="flex items-center gap-2"><CalendarDays className="w-4 h-4 text-green-700" />{item.period}</p>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-14"
+            >
+              <div className="w-14 h-14 mx-auto mb-5 forever-gradient rounded-2xl flex items-center justify-center">
+                <Briefcase className="w-6 h-6 text-white" />
+              </div>
+              <h2 className="text-4xl font-bold forever-text-gradient mb-4">Research & Academic Experience</h2>
+              <div className="section-divider"></div>
+            </motion.div>
+
+            <div className="relative border-l-2 border-green-200 ml-3 md:ml-5 space-y-10">
+              {experience.map((item, index) => (
+                <motion.article
+                  key={item.role}
+                  initial={{ opacity: 0, x: -25 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.12, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="relative pl-8 md:pl-10"
+                >
+                  <span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-green-700 ring-4 ring-green-100"></span>
+                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-7 shadow-sm">
+                    <div className="flex flex-col sm:flex-row sm:justify-between gap-3 mb-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">{item.role}</h3>
+                        <p className="text-green-700 font-semibold mt-1">{item.organization}</p>
+                      </div>
+                      <div className="text-sm text-gray-600 sm:text-right shrink-0">
+                        <p>{item.period}</p>
+                        <p>{item.location}</p>
+                      </div>
+                    </div>
+                    {item.advisor && <p className="text-sm italic text-gray-600 mb-4">{item.advisor}</p>}
+                    <ul className="space-y-2 text-gray-700 leading-relaxed">
+                      {item.highlights.map((highlight) => <li key={highlight} className="flex gap-3"><span className="text-green-700 font-bold">•</span><span>{highlight}</span></li>)}
+                    </ul>
+                  </div>
+                </motion.article>
+              ))}
             </div>
           </div>
         </section>

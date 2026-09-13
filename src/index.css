@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
   --forever-green: #2d5016;
@@ -68,6 +69,31 @@ body {
     radial-gradient(circle at 25% 25%, rgba(244, 208, 63, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, rgba(45, 80, 22, 0.1) 0%, transparent 50%);
 }
+
+.home-page {
+  font-family: 'Manrope', sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+.home-page .forever-gradient {
+  background: linear-gradient(135deg, #155e9b 0%, #2563eb 100%);
+}
+
+.home-page .forever-text-gradient {
+  background: linear-gradient(135deg, #0f3d66, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-hero {
+  background: radial-gradient(circle at 85% 20%, #2563eb 0%, transparent 32%), linear-gradient(135deg, #071a33 0%, #0f3d66 55%, #155e9b 100%);
+}
+
+.home-surface { background: #ffffff; }
+.home-soft-surface { background: #eaf2ff; }
+.home-page .text-green-700 { color: #155e9b; }
 
 .section-divider {
   background: linear-gradient(90deg, transparent 0%, var(--forever-green) 50%, transparent 100%);

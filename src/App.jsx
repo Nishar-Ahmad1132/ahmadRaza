@@ -12,7 +12,7 @@ import Contact from '@/pages/Contact';
 import Blog from '@/pages/Blog';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
-import ImageSlider from '@/components/ImageSlider'; // Ensure this path is correct
+// import ImageSlider from '@/components/ImageSlider'; // Kept for future use
 
 function App() {
   return (
@@ -20,15 +20,15 @@ function App() {
       <div className="min-h-screen overflow-x-hidden">
         <Helmet>
           <title>
-            Ahmad - Network Marketing Supervisor | Forever Living Products
+            Ahmad Raza | Computer Science Engineer
           </title>
           <meta
             name="description"
-            content="Join Ahmad's Forever Living team and discover the power of natural wellness products. Expert guidance in network marketing and business development."
+            content="Portfolio of Ahmad Raza, a computer science engineer with a background in algorithms, optimization, and mathematics."
           />
         </Helmet>
         <Navbar />
-        <ImageSlider /> 
+        {/* <ImageSlider /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
