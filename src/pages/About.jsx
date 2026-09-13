@@ -3,7 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Award, Users, TrendingUp, Heart, Target, Zap, GraduationCap, Briefcase, MapPin, CalendarDays } from 'lucide-react';
-import ahmadImage from "../assets/ahmadraza.jpg"; // Adjust the path as necessary
+import ahmadImage from "../assets/img5.jpg"; // Adjust the path as necessary
 // import img7 from "../assets/img7.jpg"; // Ensure this image is available in your assets
 
 const About = () => {
